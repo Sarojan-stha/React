@@ -26,3 +26,31 @@ Student.defaultProps = {
   isStudent: true,
   isLoggedIn: true,
 };
+
+export function Lists() {
+  const productLists = [
+    { id: "1", name: "Shirts" },
+    { id: "2", name: "Pants" },
+    { id: "3", name: "Jackets" },
+    { id: "4", name: "Shorts" },
+  ];
+
+  return (
+    <>
+      <h1>Rendering Lists</h1>
+      <ul>
+        {productLists.map((product) => (
+          <div key={product.id}>
+            <li
+              className={`${
+                product.id % 2 == 0 ? "bg-color-pink" : "bg-color-sky"
+              } margin-8px`}
+            >
+              {product.name}
+            </li>
+          </div>
+        ))}
+      </ul>
+    </>
+  );
+}

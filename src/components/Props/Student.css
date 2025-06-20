@@ -10,3 +10,15 @@
   background-color: red;
   color: white;
 }
+
+.bg-color-pink {
+  background-color: lightpink;
+}
+
+.bg-color-sky {
+  background-color: lightblue;
+}
+
+.margin-8px {
+  margin: 8px;
+}
