@@ -1,7 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import Counter from "./components/Counter/Counter";
-import StudentApp from "./components/Counter/Props/StudentApp";
+import StudentApp from "./Props/StudentApp";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
