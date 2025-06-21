@@ -1,13 +1,18 @@
 import { useState } from "react";
 import "./Counter.css";
 
+let temp = 0; // when two counter components in main.jsx the value of temp reamains same
+// temp++ doesnt re renders the ui
+
 function Counter() {
   const [count, setCount] = useState(0);
 
   const increment = () => {
+    temp++;
     setCount(count + 1);
   };
   const decrement = () => {
+    temp--;
     setCount(count - 1);
   };
   const reset = () => {
@@ -39,6 +44,7 @@ function Counter() {
         <button onClick={reset}>Reset</button>
         <button onClick={incrementBy2}>+2</button>
         <button onClick={decrementBy2}>-2</button>
+        <span>{temp}</span>
       </div>
     </div>
   );
