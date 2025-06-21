@@ -14,6 +14,21 @@ function Counter() {
     setCount(0);
   };
 
+  const incrementBy2 = () => {
+    // setCount(count+1);
+    // setCount(count+1);
+    // this doesnt work beacause the actual value of count is not updated yet until the component is ended
+    // Instead use a function inside which works with the latest value
+
+    setCount((prevCount) => prevCount + 1);
+    setCount((prevCount) => prevCount + 1);
+  };
+
+  const decrementBy2 = () => {
+    setCount((prevCount) => prevCount - 1);
+    setCount((prevCount) => prevCount - 1);
+  };
+
   return (
     <div className="container">
       <h1>COUNTER</h1>
@@ -22,6 +37,8 @@ function Counter() {
         <button onClick={increment}>Increment</button>
         <button onClick={decrement}>Decrement</button>
         <button onClick={reset}>Reset</button>
+        <button onClick={incrementBy2}>+2</button>
+        <button onClick={decrementBy2}>-2</button>
       </div>
     </div>
   );
