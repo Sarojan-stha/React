@@ -10,9 +10,15 @@ export default function UseStateEx() {
   ];
 
   const [brand, setBrand] = useState(initialState);
+  const [search, setSearch] = useState("");
+
   function searchBrand(event) {
     const value = event.target.value;
-    setBrand();
+    setSearch(value);
+    const filteredBrand = initialState.filter((brandName) =>
+      brandName.name.toLowerCase().includes(value.toLowerCase())
+    );
+    setBrand(filteredBrand);
   }
 
   return (
