@@ -1,9 +1,9 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import Form from "./components/Usestate/form";
+import UseStateEx from "./components/Exercises/Usestate-ex/UseStateEx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Form />
+    <UseStateEx />
   </StrictMode>
 );
