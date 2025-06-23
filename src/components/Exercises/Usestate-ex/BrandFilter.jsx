@@ -3,10 +3,15 @@ import { useState } from "react";
 export default function BrandFilter() {
   const initialState = [
     { id: 1, name: "Puma" },
-    { id: 2, name: "Nike" },
+    { id: 2, name: "Apple" },
     { id: 3, name: "Addidas" },
     { id: 4, name: "Fila" },
     { id: 5, name: "Reebook" },
+    { id: 6, name: "Nike" },
+    { id: 7, name: "adidas" },
+    { id: 8, name: "Aple" },
+    { id: 9, name: "phila" },
+    { id: 10, name: "pumah" },
   ];
 
   const [brand, setBrand] = useState(initialState);
