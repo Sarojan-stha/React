@@ -1,9 +1,10 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import UseStateEx from "./components/Exercises/Usestate-ex/UseStateEx";
+import BrandFilter from "./components/Exercises/Usestate-ex/BrandFilter";
+import AddToCart from "./components/Exercises/Usestate-ex/AddToCart";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <UseStateEx />
+    <AddToCart />
   </StrictMode>
 );
