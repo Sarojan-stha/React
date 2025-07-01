@@ -34,6 +34,8 @@ export function PinCode() {
 
   return (
     <>
+      {console.table(address)}
+
       <h1>Dependency mistakes while using useEffect</h1>
 
       <input

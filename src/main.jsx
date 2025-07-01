@@ -5,9 +5,10 @@ import AddToCart from "./components/Exercises/Usestate-ex/AddToCart";
 import UseRef from "./UseRef/UseRef";
 import UseEffect from "./components/UseEffect/UseEffect";
 import { Timer } from "./UseRef/Timer";
+import { PinCode } from "./UseRef/PinCode";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Timer />
+    <PinCode />
   </StrictMode>
 );
