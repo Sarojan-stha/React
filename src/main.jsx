@@ -6,9 +6,10 @@ import UseRef from "./UseRef/UseRef";
 import UseEffect from "./components/UseEffect/UseEffect";
 import { Timer } from "./UseRef/Timer";
 import { PinCode } from "./UseRef/PinCode";
+import { UseReducerCounter } from "./components/UseReducer/UseReducerCounter";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <PinCode />
+    <UseReducerCounter />
   </StrictMode>
 );
