@@ -1,15 +1,13 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import BrandFilter from "./components/Exercises/Usestate-ex/BrandFilter";
-import AddToCart from "./components/Exercises/Usestate-ex/AddToCart";
-import UseRef from "./UseRef/UseRef";
-import UseEffect from "./components/UseEffect/UseEffect";
-import { Timer } from "./UseRef/Timer";
-import { PinCode } from "./UseRef/PinCode";
-import { UseReducerCounter } from "./components/UseReducer/UseReducerCounter";
+
+import { AuthProvider } from "./context/AuthContext";
+import Login from "./components/UseContext/Login";
+import Dashboard from "./components/UseContext/Dashboard";
+import App from "./components/UseContext/App";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <UseReducerCounter />
+    <App />
   </StrictMode>
 );
