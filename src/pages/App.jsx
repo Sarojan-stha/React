@@ -1,4 +1,4 @@
-import { Link, Routes } from "react-router-dom";
+import { Link, Routes, NavLink } from "react-router-dom";
 import { Home } from "./Home/index";
 import { Cart } from "./Cart/index";
 import { About } from "./About/index";
@@ -6,12 +6,26 @@ import { BrowserRouter } from "react-router-dom";
 import { Route } from "react-router-dom";
 
 export function App() {
+  const getStyles = ({ isActive }) => {
+    return {
+      color: isActive ? "red" : "blue",
+    };
+  };
+
   return (
     <BrowserRouter>
       <div className="divClass">
-        <Link to="/about">Home</Link>||
-        <Link to="/cart">Cart</Link>||
-        <Link to="/">About</Link>
+        <NavLink to="/" style={getStyles}>
+          Home
+        </NavLink>
+        ||
+        <NavLink to="/cart" style={getStyles}>
+          Cart
+        </NavLink>
+        ||
+        <NavLink to="/about" style={getStyles}>
+          About
+        </NavLink>
       </div>
 
       <Routes>
