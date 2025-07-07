@@ -10,10 +10,6 @@ import { App } from "./pages/App";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <ThemeProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </ThemeProvider>
+    <App />
   </StrictMode>
 );

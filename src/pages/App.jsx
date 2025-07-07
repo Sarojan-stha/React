@@ -1,18 +1,24 @@
-import { Link } from "react-router-dom";
-import { Home } from "./Home";
-import { Cart } from "./Cart";
-import { About } from "./About";
+import { Link, Routes } from "react-router-dom";
+import { Home } from "./Home/index";
+import { Cart } from "./Cart/index";
+import { About } from "./About/index";
+import { BrowserRouter } from "react-router-dom";
+import { Route } from "react-router-dom";
+
 export function App() {
   return (
-    <div className="divClass">
-      <Link to="/Home">Home</Link>||
-      <Link to="../Cart">Cart</Link>||
-      <Link to="../About">About</Link>
+    <BrowserRouter>
+      <div className="divClass">
+        <Link to="/about">Home</Link>||
+        <Link to="/cart">Cart</Link>||
+        <Link to="/">About</Link>
+      </div>
+
       <Routes>
-        <Route path="/home" element={<Home />}></Route>
-        <Route path="/Cart" element={<Cart />}></Route>
-        <Route path="/about" element={<About />}></Route>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
-    </div>
+    </BrowserRouter>
   );
 }
