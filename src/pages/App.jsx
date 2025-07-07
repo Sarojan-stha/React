@@ -4,6 +4,9 @@ import { Cart } from "./Cart/index";
 import { About } from "./About/index";
 import { BrowserRouter } from "react-router-dom";
 import { Route } from "react-router-dom";
+import { Login } from "./login/Login";
+import { PrivateRoute } from "../components/PrivateRoute/PrivateRoute";
+import "./pages.css";
 
 export function App() {
   const getStyles = ({ isActive }) => {
@@ -26,12 +29,24 @@ export function App() {
         <NavLink to="/about" style={getStyles}>
           About
         </NavLink>
+        ||
+        <NavLink to="/login" style={getStyles}>
+          Log In
+        </NavLink>
       </div>
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route
+          path="/cart"
+          element={
+            <PrivateRoute>
+              <Cart />
+            </PrivateRoute>
+          }
+        />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   );
