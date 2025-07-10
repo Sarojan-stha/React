@@ -1,53 +1,84 @@
-import { Link, Routes, NavLink } from "react-router-dom";
 import { Home } from "./Home/index";
 import { Cart } from "./Cart/index";
 import { About } from "./About/index";
-import { BrowserRouter } from "react-router-dom";
-import { Route } from "react-router-dom";
 import { Login } from "./login/Login";
-import { PrivateRoute } from "../components/PrivateRoute/PrivateRoute";
+import { Navbar } from "../components/React-router/Navbar";
+import { PrivateRoute } from "../components/React-router/PrivateRoute/PrivateRoute";
+import { Items } from "../components/React-router/Items";
+import { Payement } from "../components/React-router/Payement";
 import "./pages.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { NotFound } from "../components/React-router/NotFound";
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: (
+      <div>
+        <Navbar />
+        <Home />
+      </div>
+    ),
+  },
+  {
+    path: "/cart",
+    element: (
+      <div>
+        <Navbar />
+        <PrivateRoute>
+          <Cart />
+        </PrivateRoute>
+        ,
+      </div>
+    ),
+    children: [
+      {
+        path: "payment",
+        element: <Payement />,
+      },
+      {
+        path: "items",
+        element: <Items />,
+      },
+    ],
+  },
+  {
+    path: "/about",
+    element: (
+      <div>
+        <Navbar />
+        <About />
+      </div>
+    ),
+    children: [
+      {
+        path: "payment",
+        element: <Payement />,
+      },
+      {
+        path: "items",
+        element: <Items />,
+      },
+    ],
+  },
+  {
+    path: "/login",
+    element: (
+      <div>
+        <Navbar />
+        <Login />
+      </div>
+    ),
+  },
+  {
+    path: "*",
+    element: (
+      <div>
+        <NotFound />
+      </div>
+    ),
+  },
+]);
 
 export function App() {
-  const getStyles = ({ isActive }) => {
-    return {
-      color: isActive ? "red" : "blue",
-    };
-  };
-
-  return (
-    <BrowserRouter>
-      <div className="divClass">
-        <NavLink to="/" style={getStyles}>
-          Home
-        </NavLink>
-        ||
-        <NavLink to="/cart" style={getStyles}>
-          Cart
-        </NavLink>
-        ||
-        <NavLink to="/about" style={getStyles}>
-          About
-        </NavLink>
-        ||
-        <NavLink to="/login" style={getStyles}>
-          Log In
-        </NavLink>
-      </div>
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route
-          path="/cart"
-          element={
-            <PrivateRoute>
-              <Cart />
-            </PrivateRoute>
-          }
-        />
-        <Route path="/login" element={<Login />} />
-      </Routes>
-    </BrowserRouter>
-  );
+  return <RouterProvider router={router} />;
 }
