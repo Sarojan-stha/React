@@ -1,3 +1,10 @@
+import { Outlet } from "react-router-dom";
+
 export function Cart() {
-  return <h1>This is Cart page</h1>;
+  return (
+    <div>
+      <h1>This is Cart page</h1>
+      <Outlet />
+    </div>
+  );
 }

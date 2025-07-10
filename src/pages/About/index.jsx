@@ -1,3 +1,9 @@
+import { Outlet } from "react-router-dom";
 export function About() {
-  return <h1>This is About page</h1>;
+  return (
+    <div>
+      <h1>This is About page</h1>
+      <Outlet />
+    </div>
+  );
 }
